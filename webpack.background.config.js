@@ -5,7 +5,7 @@ module.exports =
 
     {
         "mode": "development",
-        "entry": "./src/backgroundIndex.js",
+        "entry": ['babel-polyfill', "./src/backgroundIndex.js"],
         "output": {
             "path": __dirname + '/dist/background',
             "filename": "[name].js"

@@ -1,0 +1,9 @@
+// { "presets": ["es2017", "env", "react"] }
+{ 
+    "presets": [ "es2015", "env", "react" ],
+    "plugins": [
+        // "@babel/plugin-external-helpers", 
+        // "transform-async-to-generator",
+        // "transform-runtime"
+    ]
+}

@@ -13,3 +13,13 @@ export const dispatch_TESTING_TWO = () => {
         payload: [2]
     };
 }
+
+export function dispatch_CONNECT_PORT(port, tab){
+    return {
+        type: A.CONNECT_PORT,
+        payload: {
+            tab,
+            port
+        }
+    };
+}
