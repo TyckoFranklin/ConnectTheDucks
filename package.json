@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pack": "webpack --config webpack.config.js"
+    "pack": "webpack --config webpack.content.config.js & webpack --config webpack.background.config.js "
   },
   "author": "Tycko Franklin",
   "license": "ISC",
@@ -32,5 +32,8 @@
     "react-scripts": "^1.1.4",
     "redux": "^4.0.0",
     "webpack": "^4.16.5"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.2.1"
   }
 }
