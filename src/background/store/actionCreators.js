@@ -14,12 +14,22 @@ export const dispatch_TESTING_TWO = () => {
     };
 }
 
-export function dispatch_CONNECT_PORT(port, tab){
+export const dispatch_CONNECT_PORT = (port) => {
     return {
         type: A.CONNECT_PORT,
         payload: {
-            tab,
+            name: port.name,
             port
+        }
+    };
+}
+
+export const dispatch_ON_PORT_MESSAGE_ACTION = (port,msg) => {
+    return {
+        type: msg.action,
+        payload: {
+            port: port.name,
+            content: msg.content
         }
     };
 }

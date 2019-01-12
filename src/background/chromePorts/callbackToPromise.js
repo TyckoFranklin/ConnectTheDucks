@@ -52,10 +52,10 @@ export const cTPArgumentResolve = function (callbackBasedFunction, options) {
     });
 }
 
-export const chromeruntimeOnConnect = () => {
+export const chromeruntimeOnConnect = function() {
     return new Promise((resolve, reject) => {
         try {
-            chrome.runtime.onConnect.addListener.addListener(resolve);
+            chrome.runtime.onConnect.addListener(resolve);
         } catch (e) {
             return reject(e);
         }
@@ -65,8 +65,9 @@ export const chromeruntimeOnConnect = () => {
 
 
 
-export default {
-    getTabAsync,
-    cTPResolveRejectArguments,
-    cTPArgumentResolve
-}
+// export default {
+//     getTabAsync,
+//     cTPResolveRejectArguments,
+//     cTPArgumentResolve,
+//     chromeruntimeOnConnect
+// }

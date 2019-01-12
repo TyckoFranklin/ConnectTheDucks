@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nconsole.log(\"content script\");\n\n//# sourceURL=webpack:///./src/contentIndex.js?");
+eval("\n\nconsole.log(\"content script\");\n\n// let myPort = chrome.runtime.connect({name:\"b\"})\n// let action = \"TESTING_TWO\";\n// let msg = {\n// \taction,\n// \tcontent:{\n// \t\ta:\"b\",\n// \t\tc:\"B\"\n//     }\n// };\n// myPort.postMessage(msg);\n\n//# sourceURL=webpack:///./src/contentIndex.js?");
 
 /***/ })
 

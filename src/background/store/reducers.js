@@ -6,10 +6,10 @@ import * as A from './actions';
 export const testing = (state = ["a","b"], action) => {
     switch(action.type){
         case A.TESTING_ONE :{
-            return ["c","d"]
+            return action.payload;
         }
         case A.TESTING_TWO :{
-            return ["e","f"]
+            return action.payload;
         }
         default :{
             return state;
@@ -21,8 +21,13 @@ export const ports = (state = new Map(), action) => {
     switch(action.type){
         case A.CONNECT_PORT :{
             let newState = new Map(state);
-            if(newState.set(action.payload.name,action.payload.port))
-            console.log(newState);
+            newState.set(action.payload.name,action.payload.port)
+            return newState;
+        }        
+        case A.DISCONECT_PORT :{
+            let newState = new Map(state);
+            newState.get(action.payload.name).disconnect();
+            newState.delete(action.payload.name)
             return newState;
         }        
         default :{
