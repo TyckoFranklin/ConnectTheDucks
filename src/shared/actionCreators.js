@@ -24,15 +24,6 @@ export const dispatch_CONNECT_PORT = (port) => {
     };
 }
 
-export const dispatch_DISCONNECT_PORTS = (names) => {
-    return {
-        type: A.DISCONECT_PORTS,
-        payload: {
-            names
-        }
-    };
-}
-
 export const dispatch_ON_PORT_MESSAGE_ACTION = (port,msg) => {
     return {
         type: msg.action,

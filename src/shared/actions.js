@@ -3,7 +3,7 @@ export const TESTING_TWO = "TESTING_TWO";
 export const CONNECT_PORT = "CONNECT_PORT";
 export const MESSAGE_PORT = "MESSAGE_PORT";
 export const DISCONECT_PORT = "DISCONECT_PORT";
-export const DISCONECT_PORTS = "DISCONECT_PORTS";
+export const STILL_ALIVE = "STILL_ALIVE";
 
 export default {
     TESTING_ONE,
@@ -11,5 +11,5 @@ export default {
     CONNECT_PORT,
     MESSAGE_PORT,
     DISCONECT_PORT,
-    DISCONECT_PORTS
+    STILL_ALIVE
 }
