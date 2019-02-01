@@ -7,7 +7,6 @@ window.store = store;
 
 store.subscribe(()=>{
     console.log("store", store.getState());
-
 })
 
 const portManager = new PortManagement(store);

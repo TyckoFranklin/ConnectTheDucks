@@ -4,6 +4,8 @@ export const CONNECT_PORT = "CONNECT_PORT";
 export const MESSAGE_PORT = "MESSAGE_PORT";
 export const DISCONECT_PORT = "DISCONECT_PORT";
 export const STILL_ALIVE = "STILL_ALIVE";
+export const TOOLBAR_BUTTON_PRESSED = "TOOLBAR_BUTTON_PRESSED";
+
 
 export default {
     TESTING_ONE,
@@ -11,5 +13,6 @@ export default {
     CONNECT_PORT,
     MESSAGE_PORT,
     DISCONECT_PORT,
-    STILL_ALIVE
+    STILL_ALIVE,
+    TOOLBAR_BUTTON_PRESSED
 }

@@ -1,5 +1,6 @@
 import { dispatch_CONNECT_PORT, dispatch_ON_PORT_MESSAGE_ACTION, dispatch_DISCONNECT_PORTS } from '../store/actionCreators';
 import { MAXIMUM_DEAD_TIME, CHECK_STILL_ALIVE_INTERVAL } from '../../constants/timings';
+import {selectStateSlice} from '../../shared/utils/state';
 
 export default class backgroundPortManagement {
     constructor(store) {
@@ -9,6 +10,16 @@ export default class backgroundPortManagement {
             this.onMessagePort(port);
         });
         this.setupCheckConnections();
+        chrome.browserAction.onClicked.addListener((tab)=>{
+            let ports = selectStateSlice(["ports"],this.store.getState())
+            ports.forEach((value, key)=>{
+                if(value.sender.tab.id === tab.id)
+                {
+                    // send key here
+                    console.log(value.sender.tab.id,tab.id, key);
+                }
+            })            
+        });
     }
 
     setupCheckConnections(){

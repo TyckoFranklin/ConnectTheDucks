@@ -1,5 +1,5 @@
 import uuid from 'uuid';
-import { dispatch_CONNECT_PORT, dispatch_ON_PORT_MESSAGE_ACTION } from '../store/actionCreators';
+import { dispatch_CONNECT_PORT, dispatch_ON_PORT_MESSAGE_ACTION, dispatch_DISCONNECT_PORT } from '../store/actionCreators';
 import * as A from '../store/actions';
 import * as SHARED from '../../shared/actions';
 import { SEND_STILL_ALIVE_INTERVAL } from '../../constants/timings';
@@ -10,18 +10,23 @@ export default class contentPortManagement {
         this.store = store;
         this.portName = uuid.v4();
         this.port = chrome.runtime.connect({ name: this.portName })
-        this.onMessagePort(this.port);
+        this.setPort();
+        this.onMessagePort();
         this.statusUpdateMsg = {
             action: SHARED.STILL_ALIVE,
             content: {
                 port: this.portName
             }
         };
-        this.statusUpdate();
+        this.statusUpdate();        
     }
 
-    onMessagePort(port) {
-        port.onMessage.addListener((msg) => {
+    setPort(){
+        this.store.dispatch(dispatch_CONNECT_PORT(this.port));
+    }
+
+    onMessagePort() {
+        this.port.onMessage.addListener((msg) => {
             console.log(msg);
             this.store.dispatch(
                 dispatch_ON_PORT_MESSAGE_ACTION(msg)
@@ -35,5 +40,13 @@ export default class contentPortManagement {
             this.statusUpdate();
         }, SEND_STILL_ALIVE_INTERVAL)
 
+    }
+
+    onPortDisconnect(port){
+        port.onDisconnect.addListener(() => {
+            this.store.dispatch(
+                dispatch_DISCONNECT_PORT()
+            );
+        });
     }
 }
