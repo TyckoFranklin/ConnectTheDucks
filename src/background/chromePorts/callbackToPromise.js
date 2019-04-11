@@ -1,7 +1,7 @@
 
 
 
-export const getTabAsync = function(options) {
+export const getTabAsync = function (options) {
     return new Promise((resolve, reject) => {
         try {
             chrome.tabs.query(options, resolve);
@@ -17,7 +17,7 @@ export const getTabAsync = function(options) {
 
 
 
-export const getTabAsyncProofWithPause =  function(options) {
+export const getTabAsyncProofWithPause = function (options) {
     return new Promise((resolve, reject) => {
         try {
             setTimeout(() => {
@@ -42,7 +42,7 @@ export const cTPResolveRejectArguments = function (callbackBasedFunction, nArgum
     });
 }
 
-export const cTPArgumentResolve = function (callbackBasedFunction, options) {    
+export const cTPArgumentResolve = function (callbackBasedFunction, options) {
     return new Promise((resolve, reject) => {
         try {
             callbackBasedFunction(options, resolve);
@@ -52,7 +52,7 @@ export const cTPArgumentResolve = function (callbackBasedFunction, options) {
     });
 }
 
-export const chromeruntimeOnConnect = function() {
+export const chromeruntimeOnConnect = function () {
     return new Promise((resolve, reject) => {
         try {
             chrome.runtime.onConnect.addListener(resolve);

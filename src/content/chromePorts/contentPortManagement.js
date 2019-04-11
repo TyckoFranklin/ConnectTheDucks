@@ -18,10 +18,10 @@ export default class contentPortManagement {
                 port: this.portName
             }
         };
-        this.statusUpdate();        
+        this.statusUpdate();
     }
 
-    setPort(){
+    setPort() {
         this.store.dispatch(dispatch_CONNECT_PORT(this.port));
     }
 
@@ -42,7 +42,7 @@ export default class contentPortManagement {
 
     }
 
-    onPortDisconnect(port){
+    onPortDisconnect(port) {
         port.onDisconnect.addListener(() => {
             this.store.dispatch(
                 dispatch_DISCONNECT_PORT()

@@ -1,6 +1,8 @@
 import { dispatch_CONNECT_PORT, dispatch_ON_PORT_MESSAGE_ACTION, dispatch_DISCONNECT_PORTS } from '../store/actionCreators';
 import { MAXIMUM_DEAD_TIME, CHECK_STILL_ALIVE_INTERVAL } from '../../constants/timings';
-import {selectStateSlice} from '../../shared/utils/state';
+import { selectStateSlice } from '../../shared/utils/state';
+import * as SA from '../../shared/actions';
+
 
 export default class backgroundPortManagement {
     constructor(store) {
@@ -10,20 +12,27 @@ export default class backgroundPortManagement {
             this.onMessagePort(port);
         });
         this.setupCheckConnections();
-        chrome.browserAction.onClicked.addListener((tab)=>{
-            let ports = selectStateSlice(["ports"],this.store.getState())
-            ports.forEach((value, key)=>{
-                if(value.sender.tab.id === tab.id)
-                {
+        chrome.browserAction.onClicked.addListener((tab) => {
+            let ports = selectStateSlice(["ports"], this.store.getState())
+            ports.forEach((value, key) => {
+                if (value.sender.tab.id === tab.id) {
                     // send key here
-                    console.log(value.sender.tab.id,tab.id, key);
+                    console.log(value.sender.tab.id, tab.id, key);
+                    value.postMessage({
+                        id: tab.id,
+                        content: {
+                            app: "app1",
+                            visible: true,
+                        },
+                        action: SA.SET_APP_VISIBILITY,
+                    });
                 }
-            })            
+            })
         });
     }
 
-    setupCheckConnections(){
-        setTimeout(()=>{
+    setupCheckConnections() {
+        setTimeout(() => {
             this.checkConnections();
             this.setupCheckConnections();
         }, CHECK_STILL_ALIVE_INTERVAL);
@@ -37,9 +46,9 @@ export default class backgroundPortManagement {
             if (currentTime - value > MAXIMUM_DEAD_TIME) {
                 connectionsToRemove.push(key);
             }
-        });        
-        if(connectionsToRemove.length > 0){
-            console.log("Removing connection due to inactivity",connectionsToRemove);
+        });
+        if (connectionsToRemove.length > 0) {
+            console.log("Removing connection due to inactivity", connectionsToRemove);
             this.store.dispatch(
                 dispatch_DISCONNECT_PORTS(connectionsToRemove)
             );

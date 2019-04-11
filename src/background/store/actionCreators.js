@@ -33,7 +33,7 @@ export const dispatch_DISCONNECT_PORTS = (names) => {
     };
 }
 
-export const dispatch_ON_PORT_MESSAGE_ACTION = (port,msg) => {
+export const dispatch_ON_PORT_MESSAGE_ACTION = (port, msg) => {
     return {
         type: msg.action,
         payload: {

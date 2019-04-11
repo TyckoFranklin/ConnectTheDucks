@@ -7,7 +7,6 @@
             "matches": [
                 "http://*/*",
                 "https://*/*"
-
             ],
             "js": [
                 "/content/main.js"
@@ -23,6 +22,5 @@
         "activeTab"
     ],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-    "browser_action": {        
-      }
+    "browser_action": {}
 }

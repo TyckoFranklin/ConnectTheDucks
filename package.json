@@ -39,6 +39,7 @@
     "webpack": "^4.28.4"
   },
   "devDependencies": {
+    "babel-preset-stage-2": "^6.24.1",
     "webpack-cli": "^3.2.1"
   }
 }
