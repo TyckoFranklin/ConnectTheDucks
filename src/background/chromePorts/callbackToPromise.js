@@ -11,11 +11,6 @@ export const getTabAsync = function (options) {
     });
 }
 
-// getTabAsync({ active: true })
-//     .then((a) => { console.log(a) })
-//     .catch((a) => { console.log("Error message in catch: ", a) });
-
-
 
 export const getTabAsyncProofWithPause = function (options) {
     return new Promise((resolve, reject) => {
@@ -28,12 +23,6 @@ export const getTabAsyncProofWithPause = function (options) {
         }
     });
 }
-
-// getTabAsyncProofWithPause({ active: true })
-//     .then((a) => { console.log(a) })
-//     .catch((a) => { console.log("Error message in catch: ", a) });
-
-
 
 export const cTPResolveRejectArguments = function (callbackBasedFunction, nArguments) {
     let [a, ...b] = arguments;
@@ -61,13 +50,3 @@ export const chromeruntimeOnConnect = function () {
         }
     });
 }
-
-
-
-
-// export default {
-//     getTabAsync,
-//     cTPResolveRejectArguments,
-//     cTPArgumentResolve,
-//     chromeruntimeOnConnect
-// }

@@ -7,4 +7,14 @@
 //         // "transform-runtime"
 //     ]
 // }
-{ "presets": ["es2015", "env", "react", "stage-2"] }
+{
+    "presets": [
+        "es2015",
+        "env",
+        "react",
+        "stage-2"
+    ],
+    "plugins": [
+        "transform-class-properties",
+    ]
+}

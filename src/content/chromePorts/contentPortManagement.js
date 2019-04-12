@@ -13,21 +13,32 @@ export default class contentPortManagement {
         this.setPort();
         this.onMessagePort();
         this.statusUpdateMsg = {
-            action: SHARED.STILL_ALIVE,
+            action: SHARED.DISCONNECT_PORT,
             content: {
                 port: this.portName
             }
         };
+        // this.removePortMsg = {
+        //     action: SHARED.STILL_ALIVE,
+        //     content: {
+        //         port: this.portName
+        //     }
+        // };
         this.statusUpdate();
     }
 
     setPort() {
         this.store.dispatch(dispatch_CONNECT_PORT(this.port));
     }
+    // onLeavePage() {
+    //     window.addEventListener("beforeunload", ()=>{
+    //         this.port.postMessage(this.removePortMsg);
+    //         this.port.disconnect();
+    //     });
+    // }
 
     onMessagePort() {
         this.port.onMessage.addListener((msg) => {
-            console.log(msg);
             this.store.dispatch(
                 dispatch_ON_PORT_MESSAGE_ACTION(msg)
             );

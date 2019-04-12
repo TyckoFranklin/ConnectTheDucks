@@ -26,7 +26,7 @@ export const dispatch_CONNECT_PORT = (port) => {
 
 export const dispatch_DISCONNECT_PORTS = (names) => {
     return {
-        type: A.DISCONECT_PORTS,
+        type: A.DISCONNECT_PORTS,
         payload: {
             names
         }

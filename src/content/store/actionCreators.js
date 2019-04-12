@@ -36,3 +36,15 @@ export const dispatch_Update_APP_VISIBILITY = (app, visible) => {
         }
     };
 }
+
+export const dispatch_Update_MULTIPLE_APPS_VISIBILITY = (mapOfApps) => {
+    const visibility = new Map();
+    for(let [key, value] of mapOfApps){
+        visibility.set(key, false);
+    }
+    return {
+        type: A.SET_MULTIPLE_APP_VISIBILITY,
+        payload: visibility
+        
+    };
+}

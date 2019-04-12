@@ -2,31 +2,26 @@
 import { combineReducers } from 'redux'
 import * as A from './actions';
 
-const appVisibleInitialState = new Map([
-    ["app1", false],
-    ["app3", false]
-]
-);
-export const appVisible = (state = appVisibleInitialState, action) => {
+export const applicationVisibility = (state = new Map(), action) => {
     switch (action.type) {
         case A.SET_APP_VISIBILITY: {
-            let newState = (state);
-            newState.set(action.payload.app, action.payload.visible);
+            let newState = new Map();
+            const {app, visible } = action.payload;
+            for(let [key, value] of state){
+                newState.set(key, value);
+            }
+            newState.set(app, visible);
             return newState;
         }
-        default: {
-            return state;
-        }
-    }
-}
-
-export const testing = (state = ["a", "b"], action) => {
-    switch (action.type) {
-        case A.TESTING_ONE: {
-            return action.payload;
-        }
-        case A.TESTING_TWO: {
-            return action.payload;
+        case A.SET_MULTIPLE_APP_VISIBILITY: {
+            let newState = new Map();
+            for(let [key, value] of state){
+                newState.set(key, value);
+            }
+            for(let [key, value] of action.payload){
+                newState.set(key, value);
+            }
+            return newState;
         }
         default: {
             return state;
@@ -42,7 +37,7 @@ export const port = (state = {}, action) => {
             }
             return action.payload;
         }
-        case A.DISCONECT_PORT: {
+        case A.DISCONNECT_PORT: {
             if (state.disconnect) {
                 state.disconnect();
             }
@@ -55,7 +50,6 @@ export const port = (state = {}, action) => {
 }
 
 export default combineReducers({
-    testing,
     port,
-    appVisible
+    applicationVisibility
 })

@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 
 module.exports =
 
@@ -10,6 +11,9 @@ module.exports =
             "path": __dirname + '/dist/content',
             "filename": "[name].js"
         },
+        plugins: [
+            new MinifyPlugin({ removeDebugger: false, removeConsole: false }, {comments:false}),            
+        ],
         "module": {
             "rules": [
                 // {
@@ -25,7 +29,13 @@ module.exports =
                         "loader": "babel-loader",
                         "options": {
                             "presets": [
-                                "env"
+                                "es2015",
+                                "env",
+                                "react",
+                                "stage-2"
+                            ],
+                            "plugins": [
+                                "transform-class-properties",
                             ]
                         }
                     }

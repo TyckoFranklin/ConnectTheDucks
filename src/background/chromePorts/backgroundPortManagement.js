@@ -10,19 +10,19 @@ export default class backgroundPortManagement {
         chrome.runtime.onConnect.addListener((port) => {
             this.onConnectPort(port);
             this.onMessagePort(port);
+            this.onDisconnectPort(port);
         });
+
         this.setupCheckConnections();
         chrome.browserAction.onClicked.addListener((tab) => {
             let ports = selectStateSlice(["ports"], this.store.getState())
             ports.forEach((value, key) => {
                 if (value.sender.tab.id === tab.id) {
-                    // send key here
-                    console.log(value.sender.tab.id, tab.id, key);
                     value.postMessage({
                         id: tab.id,
                         content: {
-                            app: "app1",
-                            visible: true,
+                            app: "menu",
+                            visible: true
                         },
                         action: SA.SET_APP_VISIBILITY,
                     });
@@ -59,6 +59,14 @@ export default class backgroundPortManagement {
         this.store.dispatch(
             dispatch_CONNECT_PORT(port)
         );
+    }
+
+    onDisconnectPort(port) {
+        port.onDisconnect.addListener((port) => {
+            this.store.dispatch(
+                dispatch_DISCONNECT_PORTS([port.name])
+            );
+        });
     }
 
     onMessagePort(port) {

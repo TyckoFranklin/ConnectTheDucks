@@ -23,13 +23,13 @@ export const ports = (state = new Map(), action) => {
             newState.set(action.payload.name, action.payload.port);
             return newState;
         }
-        case A.DISCONECT_PORT: {
+        case A.DISCONNECT_PORT: {
             let newState = new Map(state);
             newState.get(action.payload.name).disconnect();
             newState.delete(action.payload.name);
             return newState;
         }
-        case A.DISCONECT_PORTS: {
+        case A.DISCONNECT_PORTS: {
             let newState = new Map(state);
             for (name of action.payload.names) {
                 newState.get(name).disconnect();
@@ -54,12 +54,12 @@ export const lastUpdateFromPorts = (state = new Map(), action) => {
             newState.set(action.payload.port, new Date());
             return newState;
         }
-        case A.DISCONECT_PORT: {
+        case A.DISCONNECT_PORT: {
             let newState = new Map(state);
             newState.delete(action.payload.name);
             return newState;
         }
-        case A.DISCONECT_PORTS: {
+        case A.DISCONNECT_PORTS: {
             let newState = new Map(state);
             for (name of action.payload.names) {
                 newState.delete(name);
