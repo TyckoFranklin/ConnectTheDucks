@@ -1,4 +1,4 @@
-export const menuItemStyle = {
+export const javaScriptInjectionItemStyle = {
     flexBasis: '16%',
     backgroundColor: "rgb(171, 171, 171)",
     margin: '1rem 2%',
@@ -12,5 +12,5 @@ export const menuItemStyle = {
 }
 
 export default {
-    menuItemStyle,
+    javaScriptInjectionItemStyle,
 }

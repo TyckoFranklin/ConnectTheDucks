@@ -6,7 +6,7 @@ import { dispatch_Update_APP_VISIBILITY } from '../../store/actionCreators';
 
 
 const mapStateToProps = (state) => {
-    return {  };
+    return {};
 }
 
 const mapDispatchToProps = (dispatch) => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import styles from './MenuItemCSS';
+import styles from './JavaScriptInjectionItemCSS';
 
-export default class MenuItem extends Component {
+export default class JavaScriptInjectionItem extends Component {
     constructor(props) {
         super(props);
     }
@@ -9,7 +9,7 @@ export default class MenuItem extends Component {
     render() {
         const { components, clickCallback } = this.props;
         return (
-            <div className="menu-item" style={styles.menuItemStyle} onClick={clickCallback}>
+            <div className="menu-item" style={styles.javaScriptInjectionItemStyle} onClick={clickCallback}>
                 {components}
             </div>
         );

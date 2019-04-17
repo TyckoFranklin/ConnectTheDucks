@@ -1,4 +1,4 @@
-export const menuHandlerStyle = {
+export const javaScriptInjectionHandlerStyle = {
     position: 'absolute',
     top: '15%',
     left: '15%',
@@ -11,7 +11,7 @@ export const menuHandlerStyle = {
     zIndex: '999999999999999999999999999999999999',
 }
 
-export const menuStyle = {
+export const javaScriptInjectionStyle = {
     height: '100%',
     width: '100%',
     fontSize: '2rem',
@@ -40,7 +40,7 @@ export const headerTitle = {
     marginLeft: '10px',
 }
 
-export const menuItemContainer = {
+export const javaScriptInjectionItemContainer = {
     height: 'calc(100% - 4rem - 30px)',
     width: 'calc(100% - 30px)',
     fontSize: '1.5rem',
@@ -50,7 +50,7 @@ export const menuItemContainer = {
     top: 'calc(15% + 1rem - 30px)',
 }
 
-export const menuOption = {
+export const javaScriptInjectionOption = {
     display: "inline-block",
     height: '3rem',
     fontSize: '3rem',
@@ -59,24 +59,14 @@ export const menuOption = {
     position: 'absolute',
     left: '5rem',
 }
-export const menuOptionJavaScriptInjection = {
-    display: 'inline-block',
-    height: '3rem',
-    fontSize: '2rem',
-    margin: 'auto',
-    top: 'calc(50% - 1rem)',
-    position: 'absolute',
-    left: '2rem',
-}
 
 
 export default {
-    menuHandlerStyle,
-    menuStyle,
+    javaScriptInjectionHandlerStyle,
+    javaScriptInjectionStyle,
     header,
     headerX,
     headerTitle,
-    menuItemContainer,
-    menuOption,
-    menuOptionJavaScriptInjection,
+    javaScriptInjectionItemContainer,
+    javaScriptInjectionOption,
 }

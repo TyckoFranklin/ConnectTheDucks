@@ -11,9 +11,8 @@ export default class ContentApplicationManagement {
     update(state) {
         let visibleApplications = selectStateSlice(["applicationVisibility"], state);
         for (let [key, visible] of visibleApplications) {
-                console.log(key, visible);
-                this.visibleApplications.set(key, visible);
-                this.applications.get(key).update(visible);
+            this.visibleApplications.set(key, visible);
+            this.applications.get(key).update(visible);
         }
     }
 }

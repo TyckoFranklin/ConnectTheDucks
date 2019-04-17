@@ -15,7 +15,7 @@ export default class MenuHandler {
         this.fragment = document.createDocumentFragment();
         this.reactParent = document.createElement('div');
         this.reactParent.setAttribute('id', 'connect-the-ducks-menu-root');
-        for(let key in menuHandlerStyle){
+        for (let key in menuHandlerStyle) {
             this.reactParent.style[key] = menuHandlerStyle[key];
         }
         this.fragment.appendChild(this.reactParent);
