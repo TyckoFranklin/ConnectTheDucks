@@ -21,10 +21,42 @@ export default class JavaScriptInjection extends Component {
                 </div>
                 <div className="javascript-injection-item-container" style={styles.javaScriptInjectionItemContainer}>
                     <JavaScriptInjectionItem
-                        clickCallback={Fns.showAlert}
+                        clickCallback={()=>{Fns.showAlert();closeApp(); }}
                         components={(
                             <div className="javascript-injection-option" style={styles.javaScriptInjectionOption} >
-                                A
+                                Alert
+                            </div>
+                        )}
+                    />
+                    <JavaScriptInjectionItem
+                        clickCallback={()=>{Fns.formatSeleniumTestReport();closeApp(); }}
+                        components={(
+                            <div className="javascript-injection-option" style={styles.javaScriptInjectionOption} >
+                                Format Report
+                            </div>
+                        )}
+                    />
+                    <JavaScriptInjectionItem
+                        clickCallback={()=>{Fns.formatSeleniumTestReportForJira();closeApp(); }}
+                        components={(
+                            <div className="javascript-injection-option" style={styles.javaScriptInjectionOption} >
+                                Format Report part 2 For Jira
+                            </div>
+                        )}
+                    />
+                    <JavaScriptInjectionItem
+                        clickCallback={()=>{ Fns.createFailingTestTask();closeApp();}}
+                        components={(
+                            <div className="javascript-injection-option" style={styles.javaScriptInjectionOption} >
+                                NSDD Create New Test Failure Task
+                            </div>
+                        )}
+                    />
+                    <JavaScriptInjectionItem
+                        clickCallback={()=>{ Fns.formatJestTest();closeApp();}}
+                        components={(
+                            <div className="javascript-injection-option" style={styles.javaScriptInjectionOption} >
+                                Format Jest Report
                             </div>
                         )}
                     />

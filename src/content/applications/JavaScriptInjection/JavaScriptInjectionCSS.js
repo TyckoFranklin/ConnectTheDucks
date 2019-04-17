@@ -2,7 +2,7 @@ export const javaScriptInjectionHandlerStyle = {
     position: 'absolute',
     top: '15%',
     left: '15%',
-    minHeight: '70%',
+    minHeight: '500px',
     width: '70%',
     backgroundColor: 'rgba(180, 249, 255, 0.96)',
     border: '10px #53d5ff solid',
@@ -52,12 +52,12 @@ export const javaScriptInjectionItemContainer = {
 
 export const javaScriptInjectionOption = {
     display: "inline-block",
-    height: '3rem',
-    fontSize: '3rem',
-    margin: 'auto',
-    top: 'calc(50% - 1rem)',
-    position: 'absolute',
-    left: '5rem',
+    // height: '3rem',
+    fontSize: '1rem',
+    margin: '2rem',
+    // top: 'calc(50% - 1rem)',
+    // position: 'absolute',
+    // left: '5rem',
 }
 
 

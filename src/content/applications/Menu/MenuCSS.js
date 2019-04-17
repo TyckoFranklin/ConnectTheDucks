@@ -2,7 +2,7 @@ export const menuHandlerStyle = {
     position: 'absolute',
     top: '15%',
     left: '15%',
-    minHeight: '70%',
+    minHeight: '500px',
     width: '70%',
     backgroundColor: 'rgba(180, 249, 255, 0.96)',
     border: '10px #53d5ff solid',
