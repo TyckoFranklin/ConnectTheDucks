@@ -1,6 +1,7 @@
 import { dispatch_CONNECT_PORT, dispatch_ON_PORT_MESSAGE_ACTION, dispatch_DISCONNECT_PORTS } from '../store/actionCreators';
 import { MAXIMUM_DEAD_TIME, CHECK_STILL_ALIVE_INTERVAL } from '../../constants/timings';
 import { selectStateSlice } from '../../shared/utils/state';
+import * as Ids from '../../shared/constants/applicationIds';
 import * as SA from '../../shared/actions';
 
 
@@ -21,7 +22,7 @@ export default class backgroundPortManagement {
                     value.postMessage({
                         id: tab.id,
                         content: {
-                            app: "menu",
+                            app: Ids.MENU,
                             visible: true
                         },
                         action: SA.SET_APP_VISIBILITY,

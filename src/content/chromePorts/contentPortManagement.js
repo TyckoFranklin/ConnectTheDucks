@@ -13,7 +13,7 @@ export default class contentPortManagement {
         this.setPort();
         this.onMessagePort();
         this.statusUpdateMsg = {
-            action: SHARED.DISCONNECT_PORT,
+            action: SHARED.STILL_ALIVE,
             content: {
                 port: this.portName
             }
