@@ -72,8 +72,22 @@ export const lastUpdateFromPorts = (state = new Map(), action) => {
     }
 };
 
+export const clipBoard = (state = [], action) => {
+    switch (action.type) {
+        case SHARED.ADD_CLIPBOARD_ITEM: {
+            const newState = [...state];
+            newState.push(action.payload.content.text);
+            return newState;
+        }
+        default: {
+            return state;
+        }
+    }
+}
+
 export default combineReducers({
     testing,
     ports,
-    lastUpdateFromPorts
+    lastUpdateFromPorts,
+    clipBoard
 });
