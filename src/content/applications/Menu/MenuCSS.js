@@ -51,22 +51,20 @@ export const menuItemContainer = {
 }
 
 export const menuOption = {
-    display: "inline-block",
-    height: '3rem',
-    fontSize: '3rem',
-    margin: 'auto',
-    top: 'calc(50% - 1rem)',
-    position: 'absolute',
-    left: '5rem',
+    display: "block",
+    fontSize: "2rem",
+    margin: "auto",
+    top: "calc(50% - 1.5rem)",
+    position: "relative",
+    width: "fit-content",
 }
 export const menuOptionJavaScriptInjection = {
-    display: 'inline-block',
-    height: '3rem',
-    fontSize: '2rem',
-    margin: 'auto',
-    top: 'calc(50% - 1rem)',
-    position: 'absolute',
-    left: '2rem',
+    display: "block",
+    fontSize: "2rem",
+    margin: "auto",
+    top: "calc(50% - 1.5rem)",
+    position: "relative",
+    width: "fit-content",
 }
 
 

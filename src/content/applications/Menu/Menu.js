@@ -38,19 +38,6 @@ export default class Menu extends Component {
                     />
                     <MenuItem components={(<div className="menu-option" style={styles.menuOption} >B</div>)} />
                     <MenuItem components={(<div className="menu-option" style={styles.menuOption} >C</div>)} />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
                 </div>
             </div>
         );
