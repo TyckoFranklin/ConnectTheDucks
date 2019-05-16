@@ -54,7 +54,7 @@ export const menuOption = {
     display: "block",
     fontSize: "2rem",
     margin: "auto",
-    top: "calc(50% - 1.5rem)",
+    top: "calc(50% - 1rem)",
     position: "relative",
     width: "fit-content",
 }
@@ -62,7 +62,7 @@ export const menuOptionJavaScriptInjection = {
     display: "block",
     fontSize: "2rem",
     margin: "auto",
-    top: "calc(50% - 1.5rem)",
+    top: "calc(50% - 1rem)",
     position: "relative",
     width: "fit-content",
 }
