@@ -36,21 +36,8 @@ export default class Menu extends Component {
                             </div>
                         )}
                     />
-                    <MenuItem components={(<div className="menu-option" style={styles.menuOptionJavaScriptInjection} >B</div>)} />
-                    <MenuItem components={(<div className="menu-option" style={styles.menuOptionJavaScriptInjection} >C</div>)} />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
-                    <MenuItem />
+                    <MenuItem components={(<div className="menu-option" style={styles.menuOption} >B</div>)} />
+                    <MenuItem components={(<div className="menu-option" style={styles.menuOption} >C</div>)} />
                 </div>
             </div>
         );

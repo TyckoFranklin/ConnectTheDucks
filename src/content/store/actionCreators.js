@@ -1,11 +1,9 @@
 import * as A from './actions'
 
-export const dispatch_CONNECT_PORT = (port) => {
+export const dispatch_CONNECT_PORT = (payload) => {
     return {
         type: A.CONNECT_PORT,
-        payload: {
-            port
-        }
+        payload,
     };
 }
 
@@ -45,6 +43,15 @@ export const dispatch_Update_MULTIPLE_APPS_VISIBILITY = (mapOfApps) => {
     return {
         type: A.SET_MULTIPLE_APP_VISIBILITY,
         payload: visibility
-        
+
+    };
+}
+
+export const postActionToPort = (action) => {
+    return {
+        action: action.type,
+        content: {
+            ...action.payload
+        }
     };
 }
